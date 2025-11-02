@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "554064393525",
+    "project_id": "pasteleriadelicia-a52c4",
+    "storage_bucket": "pasteleriadelicia-a52c4.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:554064393525:android:3569b1c4d11c610f4d087c",
+        "android_client_info": {
+          "package_name": "com.example.appdeliciaflutterr"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDtXy1fsS_FnJjyTv6iU1W1OSq_C60oARU"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
