@@ -43,7 +43,7 @@ class _AuthScreenState extends State<AuthScreen> {
         );
 
         if (user != null && mounted) {
-          Navigator.pushReplacementNamed(context, Routes.catalog);
+          Navigator.pushReplacementNamed(context, Routes.main);  // ← CAMBIADO
         } else if (mounted) {
           _showError('Email o contraseña incorrectos');
         }
@@ -57,7 +57,7 @@ class _AuthScreenState extends State<AuthScreen> {
         );
 
         if (user != null && mounted) {
-          Navigator.pushReplacementNamed(context, Routes.catalog);
+          Navigator.pushReplacementNamed(context, Routes.main);  // ← CAMBIADO
         } else if (mounted) {
           _showError('Error al registrar usuario');
         }
@@ -219,7 +219,7 @@ class _AuthScreenState extends State<AuthScreen> {
                         
                         TextButton(
                           onPressed: () {
-                            Navigator.pushReplacementNamed(context, Routes.catalog);
+                            Navigator.pushReplacementNamed(context, Routes.main);  // ← CAMBIADO
                           },
                           child: const Text('Continuar sin cuenta'),
                         ),

@@ -13,11 +13,10 @@ void main() async {
     options: DefaultFirebaseOptions.currentPlatform,
   );
   
-  // ⚠️ SUBIR PRODUCTOS - EJECUTAR SOLO UNA VEZ
-  // Después de ejecutar, COMENTA las siguientes 3 líneas
-  print('🔥 Subiendo productos iniciales...');
-  await FirebaseService().uploadInitialProducts();
-  print('✅ Productos subidos exitosamente');
+  // ⚠️ SUBIR PRODUCTOS - YA EJECUTADO, MANTENER COMENTADO
+  // print('🔥 Subiendo productos iniciales...');
+  // await FirebaseService().uploadInitialProducts();
+  // print('✅ Productos subidos exitosamente');
   
   runApp(const AppDeliciaApp());
 }

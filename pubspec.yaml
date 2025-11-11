@@ -13,6 +13,10 @@ dependencies:
   firebase_core: ^3.6.0        # ← ACTUALIZAR
   cloud_firestore: ^5.4.4      # ← ACTUALIZAR
   firebase_auth: ^5.3.1        # ← ACTUALIZAR
+  intl: ^0.19.0
+  pdf: ^3.10.4              # ← NUEVO: Para generar PDFs
+  printing: ^5.11.0         # ← NUEVO: Para descargar/compartir PDFs
+  path_provider: ^2.1.1     # ← NUEVO: Para guardar archivos
 
 dev_dependencies:
   flutter_test:
