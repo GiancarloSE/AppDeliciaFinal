@@ -150,7 +150,7 @@ dependencies:
 ### 1. Clonar el Repositorio
 
 ```bash
-git clone https://github.com/tu-usuario/appdelicia-flutter.git
+git clone https://github.com/GiancarloSE/AppDeliciaFinal.git
 cd appdelicia-flutter
 ```
 
@@ -565,8 +565,8 @@ Este proyecto está bajo la Licencia MIT. Ver el archivo `LICENSE` para más det
 **Giancarlo Soto**
 - Universidad: Universidad Continental
 - Curso: Desarrollo de Software / Aplicaciones Móviles
-- Email: soto@gmail.com
-- GitHub: [@tu-usuario](https://github.com/tu-usuario)
+- Email: giancarlosem123@gmail.com
+- GitHub: https://github.com/GiancarloSE
 
 ---
 
