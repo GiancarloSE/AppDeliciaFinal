@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
+import 'package:firebase_auth/firebase_auth.dart';
 import '../../providers/cart_model.dart';
+import '../../routes.dart';
 import 'checkout_screen.dart';
 
 class CartScreen extends StatelessWidget {
@@ -234,24 +236,69 @@ class CartScreen extends StatelessWidget {
                         const SizedBox(height: 16),
                         SizedBox(
                           width: double.infinity,
-                          child: ElevatedButton.icon(
-                            onPressed: () {
-                              // Navegar al Checkout (HU-03)
-                              Navigator.push(
-                                context,
-                                MaterialPageRoute(
-                                  builder: (context) => const CheckoutScreen(),
+                          child: Builder(
+                            builder: (context) {
+                              final user = FirebaseAuth.instance.currentUser;
+                              final isLoggedIn = user != null;
+
+                              return ElevatedButton.icon(
+                                onPressed: () {
+                                  if (isLoggedIn) {
+                                    // Usuario autenticado: ir al checkout
+                                    Navigator.push(
+                                      context,
+                                      MaterialPageRoute(
+                                        builder: (context) => const CheckoutScreen(),
+                                      ),
+                                    );
+                                  } else {
+                                    // No autenticado: ir a login
+                                    showDialog(
+                                      context: context,
+                                      builder: (ctx) => AlertDialog(
+                                        shape: RoundedRectangleBorder(
+                                          borderRadius: BorderRadius.circular(16),
+                                        ),
+                                        title: const Text('Inicia sesión'),
+                                        content: const Text(
+                                          'Necesitas iniciar sesión para continuar con tu compra.',
+                                        ),
+                                        actions: [
+                                          TextButton(
+                                            onPressed: () => Navigator.pop(ctx),
+                                            child: const Text('Cancelar'),
+                                          ),
+                                          ElevatedButton(
+                                            onPressed: () {
+                                              Navigator.pop(ctx);
+                                              Navigator.pushNamed(
+                                                context,
+                                                Routes.auth,
+                                              );
+                                            },
+                                            child: const Text('Iniciar Sesión'),
+                                          ),
+                                        ],
+                                      ),
+                                    );
+                                  }
+                                },
+                                icon: Icon(isLoggedIn ? Icons.payment : Icons.login),
+                                label: Text(
+                                  isLoggedIn ? 'IR AL CHECKOUT' : 'INICIAR SESIÓN',
+                                  style: const TextStyle(fontSize: 16),
+                                ),
+                                style: ElevatedButton.styleFrom(
+                                  padding: const EdgeInsets.symmetric(vertical: 16),
+                                  backgroundColor: isLoggedIn 
+                                      ? null 
+                                      : const Color(0xFFE91E63),
+                                  shape: RoundedRectangleBorder(
+                                    borderRadius: BorderRadius.circular(12),
+                                  ),
                                 ),
                               );
                             },
-                            icon: const Icon(Icons.payment),
-                            label: const Text('IR AL CHECKOUT',
-                                style: TextStyle(fontSize: 16)),
-                            style: ElevatedButton.styleFrom(
-                              padding: const EdgeInsets.symmetric(vertical: 16),
-                              shape: RoundedRectangleBorder(
-                                  borderRadius: BorderRadius.circular(12)),
-                            ),
                           ),
                         ),
                       ],
