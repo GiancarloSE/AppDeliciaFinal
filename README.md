@@ -235,13 +235,13 @@ flutter run --release
 ## 👥 Usuarios de Prueba
 
 ### Cuenta de Administrador
-- **Email:** `admin@appdelicia.com`
-- **Contraseña:** `admin123`
+- **Email:** `soto@gmail.com`
+- **Contraseña:** `soto123`
 - **Permisos:** Acceso completo al panel de administración
 
 ### Cuenta de Cliente
-- **Email:** `cliente@test.com`
-- **Contraseña:** `cliente123`
+- **Email:** `prueba@gmail.com`
+- **Contraseña:** `prueba123`
 - **Permisos:** Funciones de cliente estándar
 
 **Nota:** Para agregar más administradores, editar el array `adminEmails` en:
